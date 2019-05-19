@@ -1,0 +1,40 @@
+---
+title: "RMarkdown test"
+author: "Josselin Noirel"
+date: "19/05/2019"
+output:
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE, comment=NULL)
+library("printr")
+library("tidyverse")
+library("plotly")
+theme_set(theme_classic())
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r Pressure, echo=FALSE}
+p = ggplot(pressure, aes(temperature, pressure)) +
+    geom_point() +
+    ggtitle("Vapor Pressure of Mercury as a Function of Temperature")
+ggplotly(p)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
